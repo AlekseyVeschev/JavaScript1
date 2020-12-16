@@ -1,116 +1,106 @@
 "use strict"
-//?задание 1
-//пример 1 
-//*Префиксная форма инкримента (возвращает новое значение)
-//let a = 1, b = 1, c, d; c = ++a;
-//alert(c); 
-// ответ: 2 
-
-//пример 2 
-//*Постфиксная форма инкримента (возвращает старое значение)
-//d = b++;
-//alert(d); 
-//ответ: 1 
-
-//пример 3 
-//* потому,что в третьей строке кода "a" увеличивается на 1
-//*вырожение "++а" равно "a = a + 1"; c = 2 + 3
-//c = 2 + ++a;
-//alert(c); 
-//ответ: 5 
-
-//пример 4
-//*как и в третьем примере,только "b" возвращает ещё старое значение.
-//d = 2 + b++;
-//alert(d); //ответ: 4
-//*в строке 3,16 "a" увеличивается на 1
-//alert(a); //3 
-//*в строке 9,22 "b" увеличивается на 1
-//alert(b); //3
-
-//?задание 2
-//*(a *= 2) равно (a = a * 2); ответ: a = 4,x = 5
-//let a = 2;
-//let x = 1 + (a *= 2);
-
-//?задание 3
-/*
-let a = 5
-let b = 4
-if (a >= 0 && b >= 0) {
-   console.log(a - b)
-};
-if (a < 0 && b < 0) {
-   console.log(a * b)
-};
-if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
-   console.log(a + b)
-};
-*/
-
-//?задание 4+5
-/*
-function addition(a, b) {
-   return a + b
-};
-function subtraction(a, b) {
-   return a - b
-};
-function division(a, b) {
-   return Math.round((a / b) * 100) / 100;
-};
-function multiplication(a, b) {
-   return a * b
+//?Задание 1
+// for (let i = 0; i <= 10; i++) {
+//    if (i === 0) {
+//       console.log(i, "это ноль")
+//    } else if (i % 2) {
+//       console.log(i, "нечетное число")
+//    } else {
+//       console.log(i, "четное число")
+//    }
+// }
+//?Задание 2
+const post = {
+   author: "John",  //вывести этот текст 
+   postId: 23,
+   comments:
+      [
+         {
+            userId: 10,
+            userName: "Alex",
+            text: "lorem ipsum",
+            rating: {
+               likes: 10,
+               dislikes: 2  //вывести это число 
+            }
+         },
+         {
+            userId: 5,   //вывести это число 
+            userName: "Jane",
+            text: "lorem ipsum 2",  //вывести этот текст 
+            rating: {
+               likes: 3,
+               dislikes: 1
+            }
+         },
+      ]
 };
 
+// console.log("post.author :", post.author)
+// console.log("post[comments] :", post.comments[0].rating.dislikes)
+// console.log("post[comments] :", post.comments[1].userId)
+// console.log("post[comments] :", post.comments[1].text)
 
-//?задание
-function mathOperation(arg1, arg2, operation) {
-   switch (operation) {
-      case "+":
-         return addition(arg1, arg2)
-      case "-":
-         return subtraction(arg1, arg2)
-      case "*":
-         return multiplication(arg1, arg2)
-      case "/":
-         return division(arg1, arg2)
-      default:
-         console.log("Введите корректный оператор")
-   }
+//?Задание 3
+// const products =
+//    [
+//       {
+//          id: 3,
+//          price: 200,
+//       },
+//       {
+//          id: 4,
+//          price: 900,
+//       },
+//       {
+//          id: 1,
+//          price: 1000,
+//       },
+//    ];
+
+// products.forEach(product => {
+//    console.log(`"id:"  ${product.id}" price:" ${product.price / 100 * 85}`)
+// })
+
+//?Задание 4
+const products =
+   [
+      {
+         id: 3,
+         price: 127,
+         photos: [
+            "1.jpg",
+            "2.jpg",
+         ]
+      },
+      {
+         id: 5,
+         price: 499,
+         photos: []
+      },
+      {
+         id: 10,
+         price: 26,
+         photos: [
+            "3.jpg"
+         ]
+      },
+      {
+         id: 8,
+         price: 78,
+      },
+   ];
+
+const productsFilterSort = products
+   .filter(product => product.photos && product.photos.length)
+   .sort((a, b) => a.price - b.price)
+
+console.log(productsFilterSort)
+
+//?Задание 5
+// for (let i = 0; i < 9; i++, console.log(i)) { }
+
+//?Задание 6
+for (let i = 0, X = ""; i < 20; i++) {
+   console.log(X += "X")
 }
-console.log(mathOperation(5, 6, "*"))
-
-*/
-
-//?задание 6
-/*
-let summ = prompt("Вы хотите положить на счет в банке: ")
-let number = Number(summ % 10)
-switch (number) {
-   case 0:
-   case 5:
-   case 6:
-   case 7:
-   case 8:
-   case 9:
-      alert(`Ваша сумма в ${summ} рублей успешно зачислена.`)
-      break;
-   case 1:
-      alert(`Ваша сумма в ${summ} рубль успешно зачислена.`)
-      break;
-   case 2:
-   case 3:
-   case 4:
-      alert(`Ваша сумма в ${summ} рубля успешно зачислена.`)
-      break;
-   default:
-      alert("Это не деньги(((")
-}
-*/
-
-
-
-
-
-
